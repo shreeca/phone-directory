@@ -1,0 +1,71 @@
+<div class="toolbar mat-display-1">
+<mat-toolbar>
+  <span class="mat-subheader">Phone Directory</span>
+</mat-toolbar>
+</div>
+<form id="phone-directory" (ngSubmit)="onSubmit(f.value)" #f="ngForm">
+  <div class="d-flex flex-row col-lg-12 " style="margin-left: 13rem" id="contact-data" ngModelGroup="contactData">
+    <div class="col-md-4">
+      <input
+        type="text"
+        id="Name"
+        class="form-control"
+        placeholder="Name"
+        ngModel
+        name="contactPerson"
+      required
+      #Cname="ngModel">
+      <span class="help-block" *ngIf="!Cname.valid && Cname.touched">Please enter the name of the contact!</span>
+    </div>
+    <div class="col-md-4">
+      <input
+        type="text"
+        id="PhoneNumber"
+        class="form-control"
+        placeholder="Phone Number"
+        ngModel
+        name="contactNumber"
+      required maxlength="10"
+      #phoneNumber="ngModel">
+      <span class="help-block" *ngIf="!phoneNumber.valid && phoneNumber.touched">Please enter the number!</span>
+    </div>
+<!--    <div class="mat-radio-button" *ngFor="let relation of relationship">-->
+<!--      <label>-->
+<!--      <input type="radio"-->
+<!--      name="relationship"-->
+<!--      ngModel-->
+<!--      [value]="relation">-->
+<!--        {{relation}}-->
+<!--      </label>-->
+<!--    </div>-->
+    <button class="add-to-directory mat-raised-button btn btn-lg btn-warning" type="submit" [disabled]="!f.valid">Add to directory</button>
+  </div>
+</form>
+<div class="Mat_button">
+  <div class="row btn-toolbar">
+    <button class=" fetch mat-raised-button btn btn-lg btn-dark" type="submit" (click)="onFetchPosts()">Fetch</button>
+    <button class="delete mat-raised-button btn btn-lg btn-danger" type="submit" (click)="onClearPosts()">Delete</button>
+  </div>
+</div>
+<div class="container col-md-6">
+  <div class="table-light">
+      <table class="table" id="myTable">
+        <thead class="thead-dark">
+        <tr>
+          <th scope="col">No.</th>
+          <th scope="col">Name</th>
+          <th scope="col">Phone Number</th>
+<!--          <th scope="col">Group</th>-->
+        </tr>
+        </thead>
+        <tbody >
+        <tr *ngFor="let post of loadedPost" >
+          <th scope="row">1</th>
+          <td>{{post.contactPerson}}</td>
+          <td>{{post.contactNumber}}</td>
+<!--          <td></td>-->
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

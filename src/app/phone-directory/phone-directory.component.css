@@ -1,0 +1,47 @@
+.toolbar{
+  height: 4rem;
+  background-color: #ffde03;
+  box-shadow: dimgrey;
+  text-align: center;
+  text-shadow: dimgrey;
+}
+mat-toolbar{
+  text-align: center;
+  background-color: #ffde03;
+  font-size: 28px;
+  font-weight: bold;
+}
+.col-md-2{
+  text-align: center;
+}
+.d-flex .flex-row{
+  margin-left: 10rem;
+}
+mat-form-field{
+  text-align: center;
+  display:inline;
+  padding: 2rem ;
+}
+.name-field{
+  height: 100px;
+}
+.container{
+  margin-top: 4rem;
+}
+.add-to-directory{
+  border-radius: 2rem;
+  height: 3rem;
+  margin-top: -0.5rem;
+}
+.help-block{
+  color: rosybrown;
+  font-size: .7rem;
+}
+.Mat_button{
+  margin-left: 35rem;
+  margin-top: 3rem;
+}
+.fetch , .delete {
+  border-radius: 2rem;
+  padding: 1rem 4rem;
+}
